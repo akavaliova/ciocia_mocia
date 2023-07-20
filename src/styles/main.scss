@@ -28,8 +28,8 @@
 	--accent: var(--purple);
 	--title-1: var(--purple);
 
-	--project-card-bg: var(--white);
-	--project-card-text: var(--black);
+	--dessert-card-bg: var(--white);
+	--dessert-card-text: var(--black);
 	--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
 }
 
@@ -91,18 +91,6 @@ body {
 	font-size: 40px;
 	font-weight: 700;
 	line-height: 1.3;
-}
-
-
-
-.logo {
-	margin-right: auto;
-	color: var(--nav-text);
-	font-size: 24px;
-	font-family: 'Poppins', sans-serif;
-	& strong {
-		font-weight: 700;
-	}
 }
 
 /* Dark mode btn */
@@ -207,9 +195,9 @@ body {
 }
 
 
-/* Projects  */
+/* Desserts  */
 
-.projects {
+.desserts {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -217,9 +205,9 @@ body {
 	row-gap: 30px;
 }
 
-.project {
+.dessert {
 	max-width: 370px;
-	background-color: var(--project-card-bg);
+	background-color: var(--dessert-card-bg);
 	box-shadow: var(--box-shadow);
 	border-radius: 10px;
 
@@ -232,9 +220,9 @@ body {
 		font-weight: 700;
 		font-size: 24px;
 		line-height: 1.3;
-		color: var(--project-card-text);
+		color: var(--dessert-card-text);
 	}
-	/* Project details */
+	/* Dessert details */
 
 &-details {
 	margin: 0 auto;
@@ -290,36 +278,6 @@ body {
 }
 
 
-/* Footer */
-
-.footer {
-	margin-top: auto;
-	padding: 60px 0 50px;
-	background-color: var(--footer-bg);
-	color: var(--footer-text);
-	&__wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		row-gap: 27px;
-	}
-}
-
-.social {
-	display: flex;
-	column-gap: 30px;
-	align-items: center;
-}
-
-.copyright {
-	font-size: 16px;
-	& p + p {
-		margin-top: 0.5em;
-	}
-}
-
-
-
 @media (max-width: 620px) {
 	/* Header  */
 
@@ -360,15 +318,15 @@ body {
 		font-size: 30px;
 	}
 
-	/* Projects */
+	/* Desserts */
 
-	.project__title {
+	.dessert__title {
 		font-size: 22px;
 	}
 
-	/* Project page */
+	/* Dessert page */
 
-	.project-details__desc {
+	.dessert-details__desc {
 		margin-bottom: 20px;
 		font-size: 22px;
 	}

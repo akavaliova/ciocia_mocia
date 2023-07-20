@@ -1,4 +1,4 @@
-import "./style.scss"
+import "./style.scss";
 import sun from "./../../img/icons/sun.svg";
 import moon from "./../../img/icons/moon.svg";
 

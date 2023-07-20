@@ -51,3 +51,12 @@
 		background-color: var(--accent);
 	}
 }
+.logo {
+	margin-right: auto;
+	color: var(--nav-text);
+	font-size: 24px;
+	font-family: 'Poppins', sans-serif;
+	& strong {
+		font-weight: 700;
+	}
+}
