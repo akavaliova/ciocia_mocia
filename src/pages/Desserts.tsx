@@ -1,14 +1,14 @@
-import Blackcurrant from "./../img/photos/Blackcurrant.jpg";
-import Cherry from "./../img/photos/Cherry.jpg";
-import Mojito from "./../img/photos/Mojito.jpg";
-import PinaColada from "./../img/photos/PinaColada.jpg";
-import Mango from "./../img/photos/Mango.jpg";
-import Cappuccino from "./../img/photos/Cappuccino.jpg";
-import Mint from "./../img/photos/Mint.jpg";
-import Bounty from "./../img/photos/Bounty.jpg";
-import Matcha from "./../img/photos/Matcha.jpg";
-import Milkshake from "./../img/photos/Milkshake.jpg";
-import Caramel from "./../img/photos/Caramel.jpg";
+// import Cherry from "./../img/photos/Cherry.jpg";
+// import Mojito from "./../img/photos/Mojito.jpg";
+// import PinaColada from "./../img/photos/PinaColada.jpg";
+// import Mango from "./../img/photos/Mango.jpg";
+// import Cappuccino from "./../img/photos/Cappuccino.jpg";
+// import Mint from "./../img/photos/Mint.jpg";
+// import Bounty from "./../img/photos/Bounty.jpg";
+// import Matcha from "./../img/photos/Matcha.jpg";
+// import Milkshake from "./../img/photos/Milkshake.jpg";
+// import Caramel from "./../img/photos/Caramel.jpg";
+import Dessert from "../components/dessert/Dessert";
 
 const Desserts = () => {
     return (
@@ -16,13 +16,10 @@ const Desserts = () => {
             <div className="container">
         <h2 className="title-1">Desserts</h2>
         <ul className="desserts">
-            <li className="dessert">
-                <a href="./dessert-page.html">
-                    <img src={Blackcurrant} alt="Dessert img" className="dessert__img" />
-                    <h3 className="dessert__title">Blackcurrant Mochi</h3>
-                </a>
-            </li>
-            <li className="dessert">
+            <Dessert />
+           
+            
+            {/* <li className="dessert">
                 <a href="./dessert-page.html">
                     <img src={Cherry} alt="Dessert img" className="dessert__img" />
                     <h3 className="dessert__title">Cherry Mochi</h3>
@@ -81,7 +78,7 @@ const Desserts = () => {
                     <img src={Caramel} alt="Dessert img" className="dessert__img" />
                     <h3 className="dessert__title">Peanut caramel Mochi</h3>
                 </a>
-            </li>
+            </li> */}
         </ul>
     </div>
 </main>

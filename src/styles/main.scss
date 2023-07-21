@@ -47,8 +47,6 @@
 
 html,
 body {
-	display: flex;
-	flex-direction: column;
 	min-height: 100vh;
 
 	font-family: 'DM Sans', sans-serif;
@@ -57,6 +55,15 @@ body {
 	/* Light mode */
 	background-color: var(--page-bg);
 	color: var(--text-color);
+}
+
+#root{
+	min-height: 100vh;
+}
+.App{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 /* General */
@@ -194,7 +201,6 @@ body {
 }
 }
 
-
 /* Desserts  */
 
 .desserts {
@@ -204,27 +210,9 @@ body {
 	column-gap: 30px;
 	row-gap: 30px;
 }
-
-.dessert {
-	max-width: 370px;
-	background-color: var(--dessert-card-bg);
-	box-shadow: var(--box-shadow);
-	border-radius: 10px;
-
-	&__img {
-		border-radius: 10px;
-	}
-	
-	&__title {
-		padding: 15px 20px 25px;
-		font-weight: 700;
-		font-size: 24px;
-		line-height: 1.3;
-		color: var(--dessert-card-text);
-	}
 	/* Dessert details */
 
-&-details {
+.dessert-details {
 	margin: 0 auto;
 	max-width: 865px;
 
@@ -233,23 +221,20 @@ body {
 	align-items: center;
 
 	text-align: center;
-}
-
-&-details__cover {
-	max-width: 100%;
-	margin-bottom: 40px;
-
-	box-shadow: var(--box-shadow);
-	border-radius: 10px;
-}
-
-&-details__desc {
-	margin-bottom: 30px;
-
-	font-weight: 700;
-	font-size: 24px;
-	line-height: 1.3;
-}
+	&__cover {
+		max-width: 100%;
+		margin-bottom: 40px;
+	
+		box-shadow: var(--box-shadow);
+		border-radius: 10px;
+	}
+	&__desc {
+		margin-bottom: 30px;
+	
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 1.3;
+	}
 }
 
 /* Content list */
