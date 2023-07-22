@@ -1,22 +1,27 @@
 // import './App.scss'
 import "./styles/main.scss";
-import Navbar from "./components/navbar/Navbar"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-// import Contacts from "./pages/Contacts";
-// import Home from "./pages/Home";
+import CertainDessert from "./pages/CertainDessert";
+import Contacts from "./pages/Contacts";
+import Home from "./pages/Home";
 import Desserts from "./pages/Desserts";
 
 function App() {
   return (
-    <>
-      <div className="App">
+    <div className="App">
+      <Router>
         <Navbar />
-        {/* <Home /> */}
-        <Desserts />
-        {/* <Contacts /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/desserts" element={<Desserts />} />
+          <Route path="/dessert" element={<CertainDessert />} />
+          <Route path="/contacts" element={<Contacts />} />
+        </Routes>
         <Footer />
-      </div>
-    </>
+      </Router>
+    </div>
   );
 }
 
