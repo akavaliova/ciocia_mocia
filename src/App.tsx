@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Desserts from "./pages/Desserts";
 import ScrollToTop from "./utils/scrollToTop";
 
+
 function App() {
   return (
     <div className="App">
@@ -18,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/desserts" element={<Desserts />} />
-          <Route path="/dessert" element={<CertainDessert />} />
+          <Route path="/dessert/:id" element={<CertainDessert />} />
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
         <Footer />

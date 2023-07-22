@@ -1,19 +1,25 @@
+import { useParams } from "react-router-dom";
 import OrderButton from "../components/orderBtn/OrderButton";
+import { desserts } from "./../helpers/dessertsList";
+import { DessertItem } from "./Desserts";
 import img from "./../img/photos/Blackcurrant.jpg";
 
+
 const CertainDessert = () => {
+  const {id} = useParams();
+  const dessert = desserts[id];
+  
   return (
     <main className="section">
       <div className="container">
         <div className="dessert-details">
-          <h1 className="title-1">Blackcurrant Mochi</h1>
+          <h1 className="title-1">{dessert.title}</h1>
 
-          <img src={img} alt="" className="dessert-details__cover" />
+          <img src={dessert.img} alt={dessert.title} className="dessert-details__cover" />
 
           <div className="dessert-details__desc">
             <p>
-              Compound: blackcurrant, mascarpone, cream, Callebaut white
-              chocolate
+              Compound: {dessert.compound}
             </p>
           </div>
 
