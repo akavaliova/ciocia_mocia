@@ -8,7 +8,7 @@ import img from "./../img/photos/Blackcurrant.jpg";
 const CertainDessert = () => {
   const {id} = useParams();
   const dessert = desserts[id];
-  
+
   return (
     <main className="section">
       <div className="container">
