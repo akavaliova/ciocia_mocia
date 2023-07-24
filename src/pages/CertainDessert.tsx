@@ -1,13 +1,17 @@
 import { useParams } from "react-router-dom";
+import { useMemo } from 'react';
 import OrderButton from "../components/orderBtn/OrderButton";
 import { desserts } from "./../helpers/dessertsList";
 import { DessertItem } from "./Desserts";
 import img from "./../img/photos/Blackcurrant.jpg";
 
 
+
 const CertainDessert = () => {
   const {id} = useParams();
-  const dessert = desserts[id];
+  const dessert = useMemo(() => 
+  desserts.find((dessert) => dessert.id === Number(id)), [id])
+
 
   return (
     <main className="section">
