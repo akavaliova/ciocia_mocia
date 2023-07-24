@@ -4,7 +4,7 @@
 :root {
 	/* Colors */
 	--blackpure: #cf6b8e;
-	--black: #84455d;
+	--black: #7c4158;
 	--black-border: #be7a9f;
 	--white: #fff;
 	--purple: #55102c;
@@ -98,61 +98,6 @@ body {
 	font-size: 40px;
 	font-weight: 700;
 	line-height: 1.3;
-}
-
-
-/* Btn */
-
-.btn {
-	display: inline-block;
-	height: 48px;
-	padding: 12px 28px;
-
-	border-radius: 5px;
-	background-color: var(--accent);
-	color: var(--white);
-	letter-spacing: 0.15px;
-	font-size: 16px;
-	font-weight: 500;
-
-	transition: opacity 0.2s ease-in;
-
-	
-&:hover {
-	opacity: 0.8;
-}
-
-&:active {
-	position: relative;
-	top: 1px;
-}
-
-/* Btn outline */
-
-&-outline {
-	display: flex;
-	column-gap: 10px;
-	align-items: center;
-
-	height: 48px;
-	padding: 12px 20px;
-
-	border-radius: 5px;
-	border: 1px solid #000;
-	background-color: #fff;
-	color: #000;
-
-	transition: opacity 0.2s ease-in;
-}
-
-&-outline:hover {
-	opacity: 0.8;
-}
-
-&-outline:active {
-	position: relative;
-	top: 1px;
-}
 }
 
 /* Desserts  */

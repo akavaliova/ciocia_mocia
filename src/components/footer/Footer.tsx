@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer__wrapper">
         <ul className="social">
           <li className="social__item">
-            <a href="#!">
+            <a href="https://www.instagram.com/ciocia_mocia/" target="_blank">
               <img src={instagram} alt="Link" />
             </a>
           </li>

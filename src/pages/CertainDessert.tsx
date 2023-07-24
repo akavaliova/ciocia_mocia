@@ -10,8 +10,10 @@ import img from "./../img/photos/Blackcurrant.jpg";
 const CertainDessert = () => {
   const {id} = useParams();
   const dessert = useMemo(() => 
-  desserts.find((dessert) => dessert.id === Number(id)), [id])
-
+  desserts.find((dessert) => dessert.id === Number(id)), [id]);
+  if (!dessert) {
+    return <div>Dessert not found</div>;
+  }
 
   return (
     <main className="section">
