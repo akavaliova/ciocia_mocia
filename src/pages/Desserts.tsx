@@ -5,6 +5,7 @@ export interface DessertItem {
   title: string;
   img: string;
   id: number;
+  price: number;
 }
 
 const Desserts = () => {
@@ -19,7 +20,8 @@ const Desserts = () => {
               key={dessert.id} 
               id={dessert.id} 
               title={dessert.title} 
-              img={dessert.img} />
+              img={dessert.img} 
+              price={dessert.price}/>
             );
           })}
         </ul>

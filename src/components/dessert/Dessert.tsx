@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { DessertItem } from "./../../pages/Desserts";
 import "./style.scss";
 
-const Dessert = ({ title, img, id }: DessertItem) => {
+const Dessert = ({ title, img, id, price }: DessertItem) => {
   return (
     <NavLink to={`/dessert/${id}`}>
       <li className="dessert">
