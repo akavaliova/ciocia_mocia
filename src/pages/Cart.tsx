@@ -1,5 +1,4 @@
-import "./cart.css";
-
+import "./cart.scss";
 // import CartItem from "../components/CartItem";
 import Total from "../components/Total/total";
 

@@ -7,6 +7,7 @@ import CertainDessert from "./pages/CertainDessert";
 import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
 import Desserts from "./pages/Desserts";
+import Cart from "./pages/Cart";
 import ScrollToTop from "./utils/scrollToTop";
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/desserts" element={<Desserts />} />
           <Route path="/dessert/:id" element={<CertainDessert />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </Router>

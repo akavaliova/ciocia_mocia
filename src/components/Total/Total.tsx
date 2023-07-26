@@ -1,4 +1,4 @@
-import './total.css'
+import './total.scss';
 
 function Total() {
  
