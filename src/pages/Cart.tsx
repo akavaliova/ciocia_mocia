@@ -1,6 +1,7 @@
 import "./cart.css";
-import Total from "../components/Total";
-import CartItem from "../components/CartItem";
+
+// import CartItem from "../components/CartItem";
+import Total from "../components/Total/total";
 
 const Cart = () => {
   return (

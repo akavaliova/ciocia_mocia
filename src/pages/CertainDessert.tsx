@@ -38,8 +38,6 @@ const CertainDessert = ({img, title, price, quantity=0}) => {
               Price: {dessert.price} <small>PLN</small>
             </p>
 
-           
-
           {/* <OrderButton link="!!! make a https://... link to the general order page /> */}
           <OrderButton />
 
@@ -50,10 +48,6 @@ const CertainDessert = ({img, title, price, quantity=0}) => {
             </div>
             <button className="dessert-details__removeButton">Remove</button>
           </div>
-
-
-
-
 
         </div>
       </div>
