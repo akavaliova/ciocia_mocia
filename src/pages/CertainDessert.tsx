@@ -3,12 +3,18 @@ import { useMemo } from "react";
 import OrderButton from "../components/orderBtn/OrderButton";
 import { desserts } from "./../helpers/dessertsList";
 import { DessertItem } from "./Desserts";
-// import img from "./../img/photos/Blackcurrant.jpg";
 import "./cartDesserts.scss";
 import { ShoppingCart } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from ".././redux/cartSlice";
+import {
+  incrementQuantity,
+  decrementQuantity,
+  removeItem,
+} from "../redux/cartSlice";
 
-const CertainDessert = ({img, title, price, quantity=0}) => {
+const CertainDessert = ({ img, title, price, quantity = 0 }) => {
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -19,6 +25,8 @@ const CertainDessert = ({img, title, price, quantity=0}) => {
   if (!dessert) {
     return <div>Dessert not found</div>;
   }
+
+  const dispatch = useDispatch();
 
   return (
     <main className="section">
@@ -38,17 +46,21 @@ const CertainDessert = ({img, title, price, quantity=0}) => {
               Price: {dessert.price} <small>PLN</small>
             </p>
 
-          {/* <OrderButton link="!!! make a https://... link to the general order page /> */}
-          <OrderButton />
+            {/* <OrderButton is a button which adds CertainDessert into a cart*/}
+            <OrderButton />
 
-          <div className="dessert-details__incrDec">
-              <button>-</button>
+            <div className="dessert-details__incrDec">
+              <button onClick={() => dispatch(decrementQuantity(id))}>-</button>
               <p>{quantity}</p>
-              <button>+</button>
+              <button onClick={() => dispatch(incrementQuantity(id))}>+</button>
             </div>
-            <button className="dessert-details__removeButton">Remove</button>
+            <button
+              className="cartItem__removeButton"
+              onClick={() => dispatch(removeItem(id))}
+            >
+              Remove
+            </button>
           </div>
-
         </div>
       </div>
 

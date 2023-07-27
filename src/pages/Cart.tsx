@@ -1,16 +1,31 @@
 import "./cart.scss";
-// import CartItem from "../components/CartItem";
-import Total from "../components/Total/total";
+import CertainDessert from "./CertainDessert";
+import Total from ".././components/Total/Total";
+import { useSelector } from "react-redux";
+import Dessert from "../components/dessert/Dessert";
+import { DessertItem } from "./Desserts;
+//  import { DessertItem } from "./Desserts; - why can notfind module? 
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
+
   return (
     <div className="cart">
       <div className="cart__left">
         <div>
-          <h3 className="cart__name">Shopping Cart</h3>
+          <h3>Shopping Cart</h3>
+          {cart?.map((dessert:any) => (
+            <CertainDessert
+              key={dessert.id}
+              id={dessert.id}
+              image={dessert.img}
+              title={dessert.title}
+              price={dessert.price}
+              quantity={dessert.quantity}
+            />
+          ))}
         </div>
       </div>
-
       <div className="cart__right">
         <Total />
       </div>
