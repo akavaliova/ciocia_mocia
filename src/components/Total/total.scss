@@ -5,18 +5,16 @@
     width: 270px;
     height: 110px;
     padding: 20px;
-    background: white;
-    border-radius: 3px;
-    min-width: 350px;
+    min-width: 300px;
 
     &_summary{
-        font-weight: 400;
+        font-weight: 600;
       }
 
       &__p{
         font-size: 20px;
         font-weight: 450;
-        color: rgb(72, 77, 77);
+        color: white;
       }
   }
 

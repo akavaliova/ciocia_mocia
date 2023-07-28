@@ -9,12 +9,24 @@
   &__left {
     padding: 20px;
     width: 100%;
-    background-color: white;
+    color: white;
+    background-color: #8d6f7b;
+    opacity: 90%;
+    border-radius: 3%;
+  }
+
+  &__right {
+    padding: 20px;
+    width: 100%;
+    color: white;
+    background-color: #8d6f7b;
+    opacity: 90%;
+    border-radius: 3%;
   }
 
   &__name {
     font-size: 32px;
-    font-weight: 450;
+    font-weight: 600;
     padding-bottom: 20px;
     border-bottom: 1px solid gainsboro;
   }

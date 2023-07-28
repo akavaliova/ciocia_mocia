@@ -16,6 +16,7 @@ import {
 import { RootState } from "../redux/store";
 
 interface IProps {
+  id?: number;
   image?: any;
   title?: string;
   price?: string;

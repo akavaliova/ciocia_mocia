@@ -21,8 +21,8 @@ function Total() {
       <h2 className="total_summary">Order summary:</h2>
       <div>
       <p className="total__p">
-          total ({getTotal().totalQuantity} items) 
-          : <strong>${getTotal().totalPrice}</strong>
+          total ({getTotal().totalQuantity} desserts) 
+          : <strong>PLN {getTotal().totalPrice}</strong>
         </p>
       </div>
     </div>

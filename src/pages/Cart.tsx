@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import Dessert from "../components/dessert/Dessert";
 import { DessertItem } from "./Desserts";
 import { RootState } from "../redux/store";
-//  import { DessertItem } from "./Desserts; - why can notfind module?
+
 
 const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart);
