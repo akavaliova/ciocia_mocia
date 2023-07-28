@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { cartReducer } from "./cartSlice";
-import storage from 'redux-persist/lib/storage';
+import storage from "redux-persist/lib/storage";
 import {
   persistStore,
   persistReducer,
@@ -10,14 +10,14 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist'
+} from "redux-persist";
 
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage,
-}
+};
 
-const persistedReducer = persistReducer(persistConfig, cartReducer)
+const persistedReducer = persistReducer(persistConfig, cartReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
@@ -27,6 +27,8 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-})
+});
 
-export const persistor = persistStore(store)
+export type RootState = ReturnType<typeof store.getState>;
+
+export const persistor = persistStore(store);

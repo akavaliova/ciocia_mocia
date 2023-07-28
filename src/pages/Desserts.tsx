@@ -4,19 +4,20 @@ import "./cartDesserts.scss";
 import { ShoppingCart } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 export interface DessertItem {
   title: string;
   img: string;
   id: number;
   price: number;
-  quantity: number;
+  quantity?: number;
 }
 
 const Desserts = () => {
   const navigate = useNavigate();
 
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state: RootState) => state.cart);
 
   const getTotalQuantity = () => {
     let total = 0;
@@ -31,7 +32,7 @@ const Desserts = () => {
       <div className="container">
         <h2 className="title-1">Desserts</h2>
         <ul className="desserts">
-          {desserts.map((dessert: DessertItem) => {
+          {desserts.map((dessert) => {
             return (
               <Dessert
                 key={dessert.id}
@@ -39,7 +40,6 @@ const Desserts = () => {
                 title={dessert.title}
                 img={dessert.img}
                 price={dessert.price}
-                quantity={dessert.quantity}
               />
             );
           })}

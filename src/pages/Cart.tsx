@@ -3,21 +3,21 @@ import CertainDessert from "./CertainDessert";
 import Total from ".././components/Total/Total";
 import { useSelector } from "react-redux";
 import Dessert from "../components/dessert/Dessert";
-import { DessertItem } from "./Desserts;
-//  import { DessertItem } from "./Desserts; - why can notfind module? 
+import { DessertItem } from "./Desserts";
+import { RootState } from "../redux/store";
+//  import { DessertItem } from "./Desserts; - why can notfind module?
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state: RootState) => state.cart);
 
   return (
     <div className="cart">
       <div className="cart__left">
         <div>
           <h3>Shopping Cart</h3>
-          {cart?.map((dessert:any) => (
+          {cart?.map((dessert: any) => (
             <CertainDessert
               key={dessert.id}
-              id={dessert.id}
               image={dessert.img}
               title={dessert.title}
               price={dessert.price}

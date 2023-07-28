@@ -10,22 +10,19 @@ import Desserts from "./pages/Desserts";
 import Cart from "./pages/Cart";
 import ScrollToTop from "./utils/scrollToTop";
 
-
 function App() {
   return (
     <div className="App">
-      <Router>
-        <ScrollToTop />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/desserts" element={<Desserts />} />
-          <Route path="/dessert/:id" element={<CertainDessert />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <ScrollToTop />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/desserts" element={<Desserts />} />
+        <Route path="/dessert/:id" element={<CertainDessert />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

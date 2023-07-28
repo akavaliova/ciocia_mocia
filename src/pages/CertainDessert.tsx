@@ -6,27 +6,46 @@ import { DessertItem } from "./Desserts";
 import "./cartDesserts.scss";
 import { ShoppingCart } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from ".././redux/cartSlice";
 import {
   incrementQuantity,
   decrementQuantity,
   removeItem,
 } from "../redux/cartSlice";
+import { RootState } from "../redux/store";
 
-const CertainDessert = ({ img, title, price, quantity = 0 }) => {
+interface IProps {
+  image?: any;
+  title?: string;
+  price?: string;
+  quantity?: number;
+}
+
+const CertainDessert = ({ image, title, price, quantity = 0 }: IProps) => {
   const navigate = useNavigate();
+
+  const cart = useSelector((state: RootState) => state.cart);
+
+  const getTotalQuantity = () => {
+    let total = 0;
+    cart.forEach((dessert: any) => {
+      total += dessert.quantity;
+    });
+    return total;
+  };
 
   const { id } = useParams();
   const dessert = useMemo(
     () => desserts.find((dessert) => dessert.id === Number(id)),
     [id]
   );
+
+  const dispatch = useDispatch();
+
   if (!dessert) {
     return <div>Dessert not found</div>;
   }
-
-  const dispatch = useDispatch();
 
   return (
     <main className="section">
@@ -47,7 +66,7 @@ const CertainDessert = ({ img, title, price, quantity = 0 }) => {
             </p>
 
             {/* <OrderButton is a button which adds CertainDessert into a cart*/}
-            <OrderButton />
+            <OrderButton dessert={dessert} />
 
             <div className="dessert-details__incrDec">
               <button onClick={() => dispatch(decrementQuantity(id))}>-</button>
@@ -64,9 +83,10 @@ const CertainDessert = ({ img, title, price, quantity = 0 }) => {
         </div>
       </div>
 
+      {/* Extract this into global component and make it available globally */}
       <div className="shopping-cart" onClick={() => navigate("/cart")}>
         <ShoppingCart id="cartIcon" />
-        <p>0</p>
+        <p>{getTotalQuantity()}</p>
       </div>
     </main>
   );
