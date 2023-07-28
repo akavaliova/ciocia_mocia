@@ -26,8 +26,15 @@ import { RootState } from "../redux/store";
 //   quantity?: number;
 // }
 
-const CertainDessert = ({ id, img, title, price, quantity = 0 }: DessertItem) => {
+const CertainDessert = ({
+  id,
+  img,
+  title,
+  price,
+  quantity = 0,
+}: DessertItem) => {
   const navigate = useNavigate();
+  const { id: paramID } = useParams();
 
   const cart = useSelector((state: RootState) => state.cart);
 
@@ -39,9 +46,10 @@ const CertainDessert = ({ id, img, title, price, quantity = 0 }: DessertItem) =>
     return total;
   };
 
-  const { id: paramID } = useParams();
+  const dessertId = Number(paramID || id);
+
   const dessert = useMemo(
-    () => desserts.find((dessert) => dessert.id === Number(paramID || id)),
+    () => desserts.find((dessert) => dessert.id === dessertId),
     [paramID, id]
   );
 
@@ -73,9 +81,15 @@ const CertainDessert = ({ id, img, title, price, quantity = 0 }: DessertItem) =>
             <OrderButton dessert={dessert} />
 
             <div className="dessert-details__incrDec">
-              <button onClick={() => dispatch(decrementQuantity(dessert.id))}>-</button>
-              <p>{quantity}</p>
-              <button onClick={() => dispatch(incrementQuantity(dessert.id))}>+</button>
+              <button onClick={() => dispatch(decrementQuantity(dessert.id))}>
+                -
+              </button>
+              <p>
+                {cart?.find((cartItem) => cartItem.id === dessertId)?.quantity}
+              </p>
+              <button onClick={() => dispatch(incrementQuantity(dessert.id))}>
+                +
+              </button>
             </div>
             <button
               className="cartItem__removeButton"

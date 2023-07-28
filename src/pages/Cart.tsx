@@ -6,7 +6,6 @@ import Dessert from "../components/dessert/Dessert";
 import { DessertItem } from "./Desserts";
 import { RootState } from "../redux/store";
 
-
 const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart);
 
@@ -15,11 +14,12 @@ const Cart = () => {
       <div className="cart__left">
         <div>
           <h3>Shopping Cart</h3>
-          {cart?.map((dessert: any) => (
+          {cart?.map((dessert) => (
             <CertainDessert
               key={dessert.id}
-              image={dessert.img}
+              img={dessert.img}
               title={dessert.title}
+              id={dessert.id}
               price={dessert.price}
               quantity={dessert.quantity}
             />
