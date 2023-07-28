@@ -15,15 +15,18 @@ import {
 } from "../redux/cartSlice";
 import { RootState } from "../redux/store";
 
-interface IProps {
-  id?: number;
-  image?: any;
-  title?: string;
-  price?: string;
-  quantity?: number;
-}
+// Vova, this IProps do not change anything, I have just imported DessertItem interface and put it in there ({ id, img, title, price, quantity = 0 }: DessertItem)
+//check please, but even if I write ({ id, img, title, price, quantity = 0 }: IProps) it does not change anything, quantity does not work and dessert not found.
 
-const CertainDessert = ({ image, title, price, quantity = 0 }: IProps) => {
+// interface IProps {
+//   id?: number;
+//   img?: any;
+//   title?: string;
+//   price?: string;
+//   quantity?: number;
+// }
+
+const CertainDessert = ({ id, img, title, price, quantity = 0 }: DessertItem) => {
   const navigate = useNavigate();
 
   const cart = useSelector((state: RootState) => state.cart);
@@ -36,10 +39,10 @@ const CertainDessert = ({ image, title, price, quantity = 0 }: IProps) => {
     return total;
   };
 
-  const { id } = useParams();
+  const { id: paramID } = useParams();
   const dessert = useMemo(
-    () => desserts.find((dessert) => dessert.id === Number(id)),
-    [id]
+    () => desserts.find((dessert) => dessert.id === Number(paramID || id)),
+    [paramID, id]
   );
 
   const dispatch = useDispatch();
@@ -70,13 +73,13 @@ const CertainDessert = ({ image, title, price, quantity = 0 }: IProps) => {
             <OrderButton dessert={dessert} />
 
             <div className="dessert-details__incrDec">
-              <button onClick={() => dispatch(decrementQuantity(id))}>-</button>
+              <button onClick={() => dispatch(decrementQuantity(dessert.id))}>-</button>
               <p>{quantity}</p>
-              <button onClick={() => dispatch(incrementQuantity(id))}>+</button>
+              <button onClick={() => dispatch(incrementQuantity(dessert.id))}>+</button>
             </div>
             <button
               className="cartItem__removeButton"
-              onClick={() => dispatch(removeItem(id))}
+              onClick={() => dispatch(removeItem(dessert.id))}
             >
               Remove
             </button>
