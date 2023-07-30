@@ -9,19 +9,25 @@
   &__left {
     padding: 20px;
     width: 100%;
+    max-width: 500px;
+    margin-top: 80px;
     color: white;
-    background-color: #8d6f7b;
+    background-color: #7c4158;
     opacity: 90%;
-    border-radius: 3%;
   }
 
   &__right {
+    // position: fixed;
+    // top: 17.5%;
+    // left: 70%;
     padding: 20px;
     width: 100%;
+    max-width: 350px;
+    max-height: 350px;
     color: white;
-    background-color: #8d6f7b;
+    background-color: #7c4158;
     opacity: 90%;
-    border-radius: 3%;
+    margin-top: 80px;
   }
 
   &__name {
